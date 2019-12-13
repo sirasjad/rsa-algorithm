@@ -68,7 +68,9 @@ unsigned long long int RSA::decrypt(unsigned long long int ctext){
 
 void RSA::convertToNumbers(char* plaintext){
     for(int i = 0; i < strlen(plaintext); i++){
-        std::cout << plaintext[i];
+        //std::cout << Alphabet[plaintext[i]-65];
+        buffer[i] = int(plaintext[i]);
     }
+    std::cout << buffer;
     std::cout << std::endl;
 }
