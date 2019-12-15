@@ -1,21 +1,19 @@
 #include "rsa.hpp"
 
 int main(){
-    RSA rsa;
-    //rsa.setPrimes();
-    //rsa.setN(); // Formula: n = p*q
-    //rsa.calculatePhi();
-    //rsa.setE();
-    //rsa.generatePrivateKey();
+    std::cout << "Enter two prime numbers (separated with whitespace): ";
+    int p, q; std::cin >> p >> q;
     
+    RSA rsa(p, q);
+    rsa.exponent();
+    rsa.privateKey();
+
     std::cout << "Enter a text message: ";
-    char* plaintext = new char[512]; 
+    char* plaintext = new char[512];
     std::cin >> plaintext;
-    
     rsa.convertToNumbers(plaintext);
 
-    //rsa.encrypt();
-    //rsa.decrypt(); 
-
+    rsa.encrypt();
+    rsa.decrypt();
     return 0;
 }
